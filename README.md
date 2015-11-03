@@ -3,7 +3,7 @@ EchoView R Functions
 
 This repo contains functions in [R programming language](http://cran.r-project.org/ "R homepage") to handle [Myriax EchoView](https://www.echoview.com/ "echoview homeage") native files or exported ones.
 
-List of functions in source folder:
+List of functions in sources folder:
 
 ### [select-regions-echoview.R:](https://github.com/guzmanlopez/EchoView-R-Functions/blob/master/sources/select-regions-echoview.R "select-regions-echoview.R (code)")
 
@@ -13,19 +13,24 @@ List of functions in source folder:
 
 - **regionFilepath:** file path to echoview region definition file (*.evr*).
 
-*e.g: filepath = "/home/user/Documents/RegionsExportedFromEchoview.evr"*
+```R
+filepath <- "/home/user/Documents/RegionsExportedFromEchoview.evr"
+```
+- **regionVector:** vector of class character.
 
-- **regionVector:** r vector of class character.
-
-*e.g: regionVector <- c('Region20221', 'Region20222', 'Region20223', 'Region20224')*
-
+```R
+regionVector <- c('Region20221', 'Region20222', 'Region20223', 'Region20224')
+```
 - **newRegionClassName:** rename class name (if it's null or empty the default class name is used).
 
-*e.g: "NewClassName"*
-
+```R
+newRegionClassName <- "NewClassName"
+```
 - **newRegionDefinitionFileName:** name of the output file (without file extension)
 
-*e.g: "NewRegionDefinitionFile"*
+```R
+newRegionDefinitionFileName <- "NewRegionDefinitionFile"
+```
 
 ##### OUTPUT
 
@@ -34,7 +39,10 @@ List of functions in source folder:
 ##### Example:
 
 ```R
-ExtractRegions(regionFilepath = /home/user/RegionsExportedFromEchoview.evr, regionVector = c('Region20221', 'Region20222', 'Region20223', 'Region20224'), newRegionClassName = "FishTrack-Big", newRegionDefinitionFileName = "BigFishesRegions")
+ExtractRegions(regionFilepath = /home/user/RegionsExportedFromEchoview.evr,
+   regionVector = c('Region20221', 'Region20222', 'Region20223', 'Region20224'),
+    newRegionClassName = "FishTrack-Big",
+    newRegionDefinitionFileName = "BigFishesRegions")
 ```
 ```R
 Read 15371 items
