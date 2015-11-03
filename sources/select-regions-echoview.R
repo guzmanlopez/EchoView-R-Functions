@@ -89,7 +89,7 @@ ExtractRegions <- function(regionFilepath, regionVector, newRegionClassName, new
   }
   
   # Add empty lines
-  end = length(region) * 2
+  end = length(region) * 1.2 - 1
   
   for(i in seq(from = 2, to = end, by = 6)) {
     region = append(x = region, values = list(""), after = i)
