@@ -1,23 +1,43 @@
-Los Chochamus
+EchoView R Functions
 ===
 
-Aplicación web de Shiny para generar equipos de fútbol parejos
-a partir de una base de datos de jugadores puntuados.
+This repo contains functions in [R programming language](http://cran.r-project.org/ "R homepage") to handle [Myriax EchoView](https://www.echoview.com/ "echoview homeage") native files or exported ones.
 
-Requisitos
-===
+List of functions in source folder:
+
+### [select-regions-echoview.R:](https://github.com/guzmanlopez/EchoView-R-Functions/blob/master/sources/select-regions-echoview.R "select-regions-echoview.R (code)")
+
+- find regions by name from one echoview region definitions file (*.evr*) and make a new one with matched regions. Tested on Myriax EchoView v.4.2.
+
+##### INPUT
+
+- **regionFilepath:** file path to echoview region definition file (*.evr*).
+
+*e.g: filepath = "/home/user/Documents/RegionsExportedFromEchoview.evr"*
+
+- **regionVector:** r vector of class character.
+
+*e.g: regionVector <- c('Region20221', 'Region20222', 'Region20223', 'Region20224')*
+
+- **newRegionClassName:** rename class name (if it's null or empty the default class name is used).
+
+*e.g: "NewClassName"*
+
+- **newRegionDefinitionFileName:** name of the output file (without file extension)
+
+*e.g: "NewRegionDefinitionFile"*
+
+##### OUTPUT
+
+- writes an Echoview Region Definition file (*.evr*) to working directory.
+
+##### Example:
 
 ```R
-library('shiny')
-library(DBI)
-library(RSQLite)
+ExtractRegions(regionFilepath = /home/user/RegionsExportedFromEchoview.evr, regionVector = c('Region20221', 'Region20222', 'Region20223', 'Region20224'), newRegionClassName = "FishTrack-Big", newRegionDefinitionFileName = "BigFishesRegions")
 ```
-
-Ejecutar app desde R: 
-===
-
 ```R
-shiny::runGitHub('LosChochamu', 'guzmanlopez')
+Read 15371 items
+A new Echoview Region Definition file was written to /home/user/BigFishesRegions.evr
+- 337 regions of 3073 were found.
 ```
-===
-

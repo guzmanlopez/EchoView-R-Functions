@@ -104,7 +104,7 @@ ExtractRegions <- function(regionFilepath, regionVector, newRegionClassName, new
   if(!is.null(writefile)) {
     
     message = paste("A new Echoview Region Definition file was written to ", getwd(), "/", filename, sep = "")
-    message = paste(message, "\n", "- ", nrow(regionLines), " regions of ", nrow(regionNameFields)," regions were found and extracted.", sep = "")
+    message = paste(message, "\n", "- ", nrow(regionLines), " regions of ", nrow(regionNameFields)," regions were found.", sep = "")
     
     return(cat(message))  
   }
